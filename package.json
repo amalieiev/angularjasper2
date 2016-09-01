@@ -1,6 +1,6 @@
 {
   "name": "angularjasper2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./dist/angularjasper2.js",
   "jsnext:main": "./dist/esm/angularjasper2.js",
@@ -9,6 +9,7 @@
     "test:watch": "karma start",
     "build": "rm -rf dist; tsc",
     "build:watch": "rm -rf dist && tsc -w",
+    "postinstall": "typings insatll",
     "build_npm": "rm -rf dist && ngc -p tsconfig.publish.es5.json && ngc -p tsconfig.publish.es6.json && npm run postbuild_npm",
     "postbuild_npm": "cp package.json README.md .npmignore dist/ && npm run rewrite_npm_package",
     "rewrite_npm_package": "node --harmony_destructuring tools/rewrite-published-package.js",
