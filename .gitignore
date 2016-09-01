@@ -1,0 +1,7 @@
+node_modules/
+dist/
+dist-test/
+docs/api/
+typings/
+npm-debug.log
+.idea/
