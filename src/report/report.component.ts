@@ -1,72 +1,40 @@
-import { Component, OnInit, Input, Output, ViewChild, ContentChildren, Directive, ElementRef, EventEmitter } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    Input,
+    Output,
+    ViewChild,
+    ContentChildren,
+    Directive,
+    ElementRef,
+    EventEmitter
+} from '@angular/core';
 
-@Directive({
-    selector: 'param'
-})
-class Param {
-    @Input() name:string;
-    @Input() value:string
-}
+import { AngularJasper } from "../angular-jasper.service";
+import { Param } from './param.directive';
 
 @Component({
-    moduleId: module.id,
     selector: 'jr-report',
-    templateUrl: './report.template.html',
+    template: '<div #container></div>',
     directives: [Param]
 })
 
-export class ReportComponent implements OnInit {
+export class ReportComponent {
     @Input() resource:string;
-    @Input() visualize:string;
-    @Input() login:string;
-    @Input() password:string;
     @Output() error = new EventEmitter();
     @Output() success = new EventEmitter();
     @ViewChild('container') container:ElementRef;
     @ContentChildren(Param) params:Param[];
-    report:any;
 
-    ngOnInit() {
-        this.loadVisualize();
-    }
-
-    renderReport() {
-        var self = this;
-
-        visualize({
-            auth: {
-                name: self.login,
-                password: self.password
-            }
-        }, function (v) {
-
-            self.report = v.report({
-                resource: self.resource,
-                params: self.getParams(),
-                container: self.container.nativeElement,
-                error: self.onError.bind(self),
-                success: self.onSuccess.bind(self)
+    constructor(jasper:AngularJasper) {
+        jasper.visualizePromise.then((v)=>{
+            v.report({
+                resource: this.resource,
+                container: this.container.nativeElement,
+                error: this.onError.bind(this),
+                success: this.onSuccess.bind(this)
             });
         });
-    }
-
-    loadVisualize() {
-        var script = document.createElement('script');
-
-        script.setAttribute('src', this.visualize);
-        script.onload = this.onVisualizeLoaded.bind(this);
-        document.body.appendChild(script);
-    }
-
-    getParams() {
-        return this.params.reduce((memo, param) => {
-            memo[param.name] = JSON.parse(param.value.replace(/'/g, '\"'));
-            return memo;
-        }, {});
-    }
-
-    onVisualizeLoaded() {
-        this.renderReport();
     }
 
     onError(err) {

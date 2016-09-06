@@ -1,31 +1,39 @@
 import {
     NgModule,
-    Injectable
+    ModuleWithProviders
 } from '@angular/core';
 
 import {
-    JasperConfig
-} from './interfaces';
+    AngularJasper,
+    AngularJasperConfig
+} from './angular-jasper.service';
 
-import { ReportComponent } from './report/report.component';
+import {
+    ReportComponent
+} from './report/report.component';
 
 @NgModule({
     declarations: [ReportComponent],
-    exports: [ReportComponent]
+    exports: [ReportComponent],
+    providers: [
+        AngularJasper
+    ]
 })
 export class AngularJasperModule {
-    static initializeApp(config:JasperConfig) {
-        console.log(config);
-    }
-}
-
-@Injectable()
-export class AngularJasper {
-    constructor() {
-        console.log('AngularJasper constructed');
+    static initializeApp(config:AngularJasperConfig): ModuleWithProviders {
+        return {
+            ngModule: AngularJasperModule,
+            providers: [
+                {provide: AngularJasperConfig, useValue: config}
+            ]
+        };
     }
 }
 
 export {
-    ReportComponent
+    AngularJasper,
+
+    ReportComponent,
+
+    AngularJasperConfig
 }
