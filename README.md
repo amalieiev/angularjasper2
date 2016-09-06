@@ -21,14 +21,14 @@ import { Component } from '@angular/core';
 import { ReportComponent } from 'angularjasper2';
 
 @Component({
-  selector: 'project-name-app',
-  template: `
-  <h2>My Application</h2>
-  <jr-report resource="/public/Samples/Reports/07g.RevenueDetailReport"></jr-report>
-  `
+    selector: 'my-app',
+    template: `
+    <h1>My First Angular 2 App</h1>
+    <jr-report resource="/public/Samples/Reports/07g.RevenueDetailReport"></jr-report>
+    `,
+    directives: [ReportComponent]
 })
-export class MyApp {
-}
+export class AppComponent { }
 ```
 
 ## Developer Guide
