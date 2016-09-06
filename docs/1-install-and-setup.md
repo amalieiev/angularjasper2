@@ -7,7 +7,7 @@ git clone https://github.com/angular/quickstart.git project-name
 cd project-name
 ```
 
-### 2. Install Angular starter dependencies
+### 2. Install Angular starter dependencies.
 
 ```bash
 npm install
@@ -42,7 +42,7 @@ npm install angularjasper2 --save
 })(this);
 ```
 
-### 4. Setup @NgModule
+### 5. Setup @NgModule.
 
 Open `app/app.module.ts`, specify your AngularJasper configuration.
 
@@ -71,7 +71,7 @@ export class AppModule {
 }
 ```
 
-### 5. Edit `app/app.component.ts`.
+### 6. Edit `app/app.component.ts`.
 
 ```bash
 import { Component } from '@angular/core';
@@ -88,7 +88,7 @@ import { ReportComponent } from 'angularjasper2';
 export class AppComponent { }
 ```
 
-### 6. Serve
+### 7. Serve.
 
 ```bash
 npm start
