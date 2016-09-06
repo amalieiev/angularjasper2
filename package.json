@@ -1,6 +1,6 @@
 {
   "name": "angularjasper2",
-  "version": "1.0.5",
+  "version": "0.0.1",
   "description": "",
   "main": "./dist/angularjasper2.js",
   "jsnext:main": "./dist/esm/angularjasper2.js",

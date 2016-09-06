@@ -15,8 +15,7 @@ import { Param } from './param.directive';
 
 @Component({
     selector: 'jr-report',
-    template: '<div #container></div>',
-    directives: [Param]
+    template: '<div #container></div>'
 })
 
 export class ReportComponent {
@@ -24,7 +23,6 @@ export class ReportComponent {
     @Output() error = new EventEmitter();
     @Output() success = new EventEmitter();
     @ViewChild('container') container:ElementRef;
-    @ContentChildren(Param) params:Param[];
 
     constructor(jasper:AngularJasper) {
         jasper.visualizePromise.then((v)=>{

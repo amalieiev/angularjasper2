@@ -9,7 +9,7 @@ export class AngularJasperConfig {
 @Injectable()
 export class AngularJasper {
     config:AngularJasperConfig;
-    visualizePromise:Promise;
+    visualizePromise:Promise<any>;
 
     constructor(config:AngularJasperConfig) {
         this.config = config;
@@ -23,7 +23,7 @@ export class AngularJasper {
         this.visualizePromise = new Promise((resolve, reject) => {
             script.setAttribute('src', `${this.config.server}/client/visualize.js`);
             script.onload = () => {
-                window.visualize({
+                window['visualize']({
                     auth: {
                         name: this.config.login,
                         password: this.config.password
