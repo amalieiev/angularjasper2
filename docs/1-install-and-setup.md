@@ -21,7 +21,9 @@ Now that you have a new project setup, install AngularJasper2 from npm.
 npm install angularjasper2 --save
 ```
 
-### 4. Edit `system.config.js` configuration.
+### 4. Configure SystemJS.
+
+Open `system.config.js`, edit `map` and `package` configuration.
 
 ```js
 (function (global) {
@@ -71,7 +73,9 @@ export class AppModule {
 }
 ```
 
-### 6. Edit `app/app.component.ts`.
+### 6. Add ReportComponent to your component.
+
+Open `app/app.component.ts`, insert `jr-report` into component's template.
 
 ```bash
 import { Component } from '@angular/core';
