@@ -1,14 +1,17 @@
 <p align="center">
   <h1 align="center">AngularJasper2</h1>
-  <p align="center">The library for VisualizeJs and Angular 2</p>
 </p>
 
 Status: Beta
 
+## What is AngularJasper2?
+
+- The library for **Visualize** and **Angular2**.
+
 ## Install
 
 ```bash
-npm install firebase angularjasper2 --save
+npm install angularjasper2 --save
 ```
 
 ## Example use:
