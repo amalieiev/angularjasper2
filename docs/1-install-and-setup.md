@@ -1,29 +1,12 @@
 # 1. Installation and Setup
 
-> Getting started with AngularFire2 is easy with the [Angular CLI](https://github.com/angular/angular-cli). Follow the 10 steps below to get started. Don't worry, we're always working to make this shorter.
-
-**The setups below use the Webpack branch of the [Angular CLI](https://github.com/angular/angular-cli).**
-
-**For the Broccoli/System.js branch [see this set up guide](broccoli-system-js-cli-setup.md)**
-
-### 0. Prerequisites
-
-You need the Angular CLI, typings, and TypeScript 2.0. TypeScript 2.0 is required for AngularFire2.
-
-```bash
-npm install -g angular-cli@webpack 
-# or install locally
-npm install angular-cli@webpack --save-dev
-# make sure you have typings installed
-npm install -g typings 
-npm install -g typescript@2.0
 ```
 
-### 1. Create a new project
+### 1. Clone Angular starter from GitHub.
 
 ```bash
-ng new <project-name>
-cd <project-name>
+git clone https://github.com/angular/quickstart.git project-name
+cd project-name
 ```
 
 The Angular CLI's `new` command will set up the latest Angular build in a new project structure.
