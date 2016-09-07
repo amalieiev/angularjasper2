@@ -86,7 +86,7 @@ export class AppComponent {
 
 ### 5. Add `jr-report` to component template.
 
-Open `src/app/app.component.ts`, import `ReportComponent` and add it to `directives`.
+Open `src/app/app.component.html`, add `jr-report` component.
 
 ```html
 <h1>
