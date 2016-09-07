@@ -69,7 +69,7 @@ export class AppModule { }
 
 Open `src/app/app.component.ts`, import `ReportComponent` and add it to `directives`.
 
-```bash
+```ts
 import { Component } from '@angular/core';
 import { ReportComponent } from 'angularjasper2';
 
