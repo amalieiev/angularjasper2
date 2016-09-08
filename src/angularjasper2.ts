@@ -8,17 +8,15 @@ import {
     AngularJasperConfig
 } from './angular-jasper.service';
 
-import {
-    ReportComponent
-} from './report/report.component';
+import { ReportComponent } from './report/report.component';
+import { Param } from './report/param.directive';
 
 @NgModule({
-    declarations: [ReportComponent],
-    exports: [ReportComponent],
-    providers: [
-        AngularJasper
-    ]
+    declarations: [ReportComponent, Param],
+    exports: [ReportComponent, Param],
+    providers: [AngularJasper]
 })
+
 export class AngularJasperModule {
     static initializeApp(config:AngularJasperConfig): ModuleWithProviders {
         return {
