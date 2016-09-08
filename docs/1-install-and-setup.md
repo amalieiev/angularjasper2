@@ -92,7 +92,9 @@ Open `src/app/app.component.html`, add `jr-report` component.
 <h1>
   {{title}}
 </h1>
-<jr-report resource="/public/Samples/Reports/07g.RevenueDetailReport"></jr-report>
+<jr-report resource="/public/Samples/Reports/07g.RevenueDetailReport">
+  <param name="ProductFamily" value="['Food']">
+</jr-report>
 ```
 
 ### 6. Serve.
